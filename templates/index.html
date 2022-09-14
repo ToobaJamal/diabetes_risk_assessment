@@ -1,0 +1,47 @@
+<! DOCTYPE html>
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Diabetes Risk Prediction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+  <h1 class="appname textclr">Diabetes Risk Assessment</h1>
+  <main>
+    <section class="info-section">
+      <div class="info-desc">
+          <p class="textclr">Diabetes is a health condition in which body does not make good use of insulin released by pancreas, 
+          resulting in higher blood sugar levels. High blood sugar levels can cause complicated health issues like 
+          heart disease, kidney disease, and vision loss.</p>
+          <p class="textclr">According to Centers for Disease Control and Prevention, more than 37 million American adults have diabetes 
+            and about 1 in 5 people with diabetes don't know they have it.
+          </p>
+          <p class="textclr">This diabetes risk assessment is aimed at predicting early stage type-2 diabetes risk in
+              individuals of age 20-90.</p>
+          <p class="textclr">The assessment is easy, requires a few minutes to complete and provides you an instant prediction.</p>
+      </div>
+        <button class="start-btn" type="button" onclick="window.location.href='{{ url_for('questions') }}';">Start Assessment</button>
+    </section>
+    <section class="news-section">
+      <div>
+        <p class="news-sec-head textclr">Check out top health news</p>
+      </div>
+      <div id="news" class="news">
+        <a href="" id="news-link"><p id="news-title"></p></a>
+      </div> 
+    </section>
+  </main>
+  <footer>
+    <p>He who has health, has hope; and he who has hope, has everything - Thomas Carlyle</p>
+ </footer>
+ <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}"></script>
+</body>
+</html>
+
