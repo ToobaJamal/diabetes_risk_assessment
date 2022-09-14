@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible to mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diabetes Risk Prediction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<h1 class="appname textclr">Diabetes Risk Assessment</h1>
+ <main class="login">
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <p class="question textclr">What is your age?</p>
+    	  <input class="age-input textclr" type="number" name="Age" placeholder="Enter your age" required="required" /><br>
+        <p class="question textclr">What is your gender?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Sex" value="1" required="required" />Male</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Sex" value="0" required="required" />Female</label><br>
+        <p class="question read-more-q textclr">Do you suffer from Polyuria (Excessive Urine)?</p>
+        <p class="read-more"><a href="https://www.healthline.com/health/urination-excessive-volume#:~:text=Excessive%20urination%20volume%20(or%20polyuria,day%20is%20usually%20considered%20normal.">
+          Know more about Polyuria</a></p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Polyuria" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Polyuria" value="0" required="required" />No</label><br>
+        <p class="question read-more-q textclr">Do you suffer from Polydipsia (Excessive Thirst)?</p>
+        <p class="read-more"><a href="https://www.webmd.com/diabetes/polydipsia-thirsty#:~:text=Drinking%20plenty%20of%20water%20will,of%20time%20in%20the%20bathroom.">
+          Know more about Polydipsia</a></p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Polydipsia" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Polydipsia" value="0" required="required" />No</label><br>
+        <p class="question textclr">Have you noticed sudden weight loss in yourself?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="sudden weight loss" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="sudden weight loss" value="0" required="required" />No</label><br>
+        <p class="question textclr">Do you feel weakness in your body throughout the day?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="weakness" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="weakness" value="0" required="required" />No</label><br>
+        <p class="question read-more-q textclr">Do you suffer from Polyphagia (Excessive Hunger)?</p>
+        <p class="read-more"><a href="https://www.healthline.com/health/polyphagia">
+          Know more about Polyphagia</a></p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Polyphagia" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Polyphagia" value="0" required="required" />No</label><br>
+        <p class="question read-more-q textclr">Do you suffer from Genital Thrush (Yeast Infection)?</p>
+        <p class="read-more"><a href="https://www.nhs.uk/conditions/thrush-in-men-and-women/">
+          Know more about Genital Thrush</a></p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Genital thrush" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Genital thrush" value="0" required="required" />No</label><br>
+        <p class="question textclr">Do you suffer from blurred vision?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="visual blurring" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="visual blurring" value="0" required="required" />No</label><br>
+        <p class="question textclr">Do you suffer from itching in your body?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Itching" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Itching" value="0" required="required" />No</label><br>
+        <p class="question textclr">Have you noticed increased irritability/ agitation in yourself?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Irritability" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Irritability" value="0" required="required" />No</label><br>
+        <p class="question textclr">Do your wounds take longer to heal?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="delayed healing" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="delayed healing" value="0" required="required" />No</label><br>
+        <p class="question read-more-q textclr">Do you suffer from Partial Paresis (Muscle Weakening)?</p>
+        <p class="read-more"><a href="https://www.healthline.com/health/paresis#bottom-line">
+          Know more about Partial Paresis</a></p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="partial paresis" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="partial paresis" value="0" required="required" />No</label><br>
+        <p class="question read-more-q textclr">Do you suffer from Muscle Stiffness (Difficulty Moving)?</p>
+        <p class="read-more"><a href="https://www.osmosis.org/answers/muscle-stiffness#:~:text=What%20is%20muscle%20stiffness%3F,skeletal%2C%20cardiac%2C%20and%20smooth.">
+          Know more about Muscle Stiffness</a></p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="muscle stiffness" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="muscle stiffness" value="0" required="required" />No</label><br>
+        <p class="question textclr">Do you suffer from Hair Loss?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Alopecia" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Alopecia" value="0" required="required" />No</label><br>
+        <p class="question textclr">Are you obese?</p>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Obesity" value="1" required="required" />Yes</label>
+        <label class="textclr"><input class="radio-input textclr" type="radio" name="Obesity" value="0" required="required" />No</label><br>
+        
+
+        <button type="submit" class="btn-submit" onclick="window.location.href='{{ url_for('predict') }}';">Get Results</button>
+    </form>
+  </main>
+ <footer>
+  <p>He who has health, has hope; and he who has hope, has everything - Thomas Carlyle</p>
+  </footer>
+ 
+</body>
+</html>
+
