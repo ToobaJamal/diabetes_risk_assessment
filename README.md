@@ -12,5 +12,5 @@ The concept was to create an app where users can answer a few health related que
 - GitHub: [ToobaJamal](https://github.com/ToobaJamal)
 - LinkedIn: [Tooba Jamal](https://www.linkedin.com/in/tooba-jamal/)
 
-## Liscence
+## License
 [MIT](https://choosealicense.com/licenses/mit/)
