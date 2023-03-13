@@ -18,6 +18,9 @@ The concept was to create an app where users can answer a few health related que
 - JavaScript to get health related news from an API and display them at home page
 - Python Scikit-learn to train Machine Learning model on [Diabetes Risk Prediction Data](https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.) Flask to deploy the model
 
+## Optimizations
+When I improve this project, I will work making the UI better. A cleaner UI will make this project even better.
+
 ## Authors
 - GitHub: [ToobaJamal](https://github.com/ToobaJamal)
 - LinkedIn: [Tooba Jamal](https://www.linkedin.com/in/tooba-jamal/)
